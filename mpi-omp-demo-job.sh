@@ -9,10 +9,10 @@
 #SBATCH --account=standby      # Adjust partition as needed
 
 # Load any necessary modules (modify as needed)
-# module load <a_module>
+module load anaconda
 
 # Set OpenMP environment variable
 export OMP_NUM_THREADS=2
 
 # Run the Python script
-python3 run_mpi_openmp.py
+python run_mpi_openmp.py
