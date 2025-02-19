@@ -10,6 +10,9 @@
 
 # Load any necessary modules (modify as needed)
 module load anaconda
+# Use Intel MPI instead of cluster's default
+module load intel-oneapi-compilers
+module load intel-oneapi-mpi
 
 # Set OpenMP environment variable
 export OMP_NUM_THREADS=2

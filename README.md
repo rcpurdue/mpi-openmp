@@ -14,6 +14,7 @@ Demo MPI process running multiple threads
 4. Each instance (rank) of executable spawns OpenMP threads. Threads share memory.
 
 ## Expected output
+NOTE: Output text may be intermixed (jumbled) due to parallel writes!
 ```
 MPI Rank: 0/2, OpenMP Thread: 0/2, Running on Core: 105
 MPI Rank: 0/2, OpenMP Thread: 1/2, Running on Core: 105
@@ -22,8 +23,15 @@ MPI Rank: 1/2, OpenMP Thread: 1/2, Running on Core: 106
 ```
 
 ## To compile the executable
+### Using cluster default
 ```
 mpicxx -fopenmp -o mpi_openmp_threads mpi_openmp_threads.cpp
+```
+### Using Intel
+```
+module load intel-oneapi-compilers
+module load intel-oneapi-mpi
+mpiicpc -qopenmp -o mpi_openmp_threads mpi_openmp_threads.cpp
 ```
 
 ## To submit the Slurm job
